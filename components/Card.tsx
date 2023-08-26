@@ -9,7 +9,7 @@ export function PedomanCard(props: {
    color?: string;
 }) {
    return (
-      <div className="basis-full md:basis-1/2 rounded-[24px] flex flex-col md:flex-row  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box  items-center ">
+      <div className="basis-full  md:basis-1/2 rounded-[24px] flex flex-col md:flex-row  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box  items-center ">
          <div
             style={{ backgroundColor: props.color ? props.color : "#F2F2F2" }}
             className=" flex items-center justify-center  h-auto  md:h-full w-full md:w-fit py-7 px-10"
@@ -36,7 +36,7 @@ export function PedomanCard(props: {
 
 export function KegiatanCard() {
    return (
-      <div className="basis-1/3 neu-box rounded-2xl overflow-hidden border-[3px] border-black">
+      <div className="basis-1/3 max-w-[600px] neu-box rounded-2xl overflow-hidden border-[3px] border-black">
          <Image
             src={imageExample}
             alt=""

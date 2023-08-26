@@ -65,7 +65,7 @@ export default function Home() {
                      >
                         UKM OIKUMENE
                      </h1>
-                     <p className="text-2xl font-light text-center w-full md:w-[900px]">
+                     <p className="text-2xl font-light text-center w-full lg:w-[800px]">
                         Hendaklah kita semua saling menolong untuk meringankan
                         beban saudara-saudari seiman yang mengalami kelemahan
                         atau kesusahan.
@@ -81,7 +81,9 @@ export default function Home() {
                   autoFill={true}
                >
                   <div className=" flex justify-center items-center gap-2   mx-2">
-                     <h1 className="text-[40px] leading-none  ">welcome</h1>
+                     <h1 className="text-[25px] md:text-[40px] leading-none  ">
+                        welcome
+                     </h1>
                      <Image src={welcomeIcon} alt="" />
                   </div>
                </Marquee>
@@ -130,7 +132,7 @@ export default function Home() {
                <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
                   kegiatan kami
                </h1>
-               <div className="flex flex-col md:flex-row gap-10 ">
+               <div className="flex justify-center items-center flex-col lg:flex-row gap-10 ">
                   <KegiatanCard />
                   <KegiatanCard />
                   <KegiatanCard />
