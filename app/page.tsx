@@ -71,7 +71,7 @@ export default function Home() {
                         atau kesusahan.
                      </p>
                   </div>
-                  <HeroDown className="absolute right-[50%] bottom-5" />
+                  {/* <HeroDown className="absolute right-[50%] bottom-5" /> */}
                </div>
             </div>
             <div className="  bg-black text-white py-5">
@@ -92,11 +92,11 @@ export default function Home() {
                   PEDOMAN KAMI
                </h1>
                <div className="flex flex-col gap-10">
-                  <div className=" justify-between flex gap-10 flex-wrap ">
+                  <div className="  flex flex-col md:flex-row gap-10  ">
                      <PedomanCard color="#63E296" />
                      <PedomanCard color="#323643" />
                   </div>
-                  <div className="justify-between flex gap-10 flex-wrap">
+                  <div className="flex flex-col md:flex-row gap-10 ">
                      <PedomanCard color="#FA5656" desc="Halo" />
                      <PedomanCard color="#0293E0" desc="tes" />
                   </div>
@@ -130,7 +130,7 @@ export default function Home() {
                <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
                   kegiatan kami
                </h1>
-               <div className="flex gap-10 justify-center md:justify-between flex-wrap">
+               <div className="flex flex-col md:flex-row gap-10 ">
                   <KegiatanCard />
                   <KegiatanCard />
                   <KegiatanCard />
