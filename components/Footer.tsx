@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function Footer() {
    return (
       <div className="bg-[#323643] py-10 text-white">
-         <div className="max-w-[1440px] mx-auto px-[100px]">
-            <div className="flex justify-between items-center">
+         <div className="max-w-[1440px] mx-auto px-[3%]">
+            <div className="flex flex-wrap gap-10 justify-between items-center">
                <div className="flex flex-col  gap-3">
                   <div className="flex gap-5 ">
                      <Image src={footer1} alt="" width={100} height={100} />
@@ -16,7 +16,7 @@ export default function Footer() {
                   <p className="text-2xl  font-light">Universitas Mataram</p>
                   <h3 className="text-[3rem] leading-none">UKM OIKUMENE</h3>
                </div>
-               <div className="flex gap-[70px]">
+               <div className="flex flex-wrap gap-[70px]">
                   <ul className="flex flex-col gap-5">
                      <li>
                         <h5 className="text-2xl ">Navigasi</h5>{" "}
@@ -76,7 +76,7 @@ export default function Footer() {
                   </ul>
                </div>
             </div>
-            <div className="flex justify-between pt-20">
+            <div className="flex flex-wrap gap-5 justify-between pt-20">
                <p>
                   <a href="">Behind the scene</a>
                </p>

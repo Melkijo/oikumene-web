@@ -8,17 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-        keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-100%)' },
-            },
-          },
-          animation : {
-            'marquee-infinite' : 'marquee 20s linear infinite',
-          },
+       
     }
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+
+  daisyui: {
+
+    darkTheme: false,
+  }
 }
+
 export default config
