@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 html {
     font-family: var(--font-work-sans);
     background-color: #EDF4F9;
     font-size: 1rem;
+    color: #323643;
 }
 
 h1,
