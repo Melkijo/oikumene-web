@@ -9,10 +9,10 @@ export function PedomanCard(props: {
    color?: string;
 }) {
    return (
-      <div className=" rounded-[24px] flex  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box w-full md:w-[600px] gap-6 items-center ">
+      <div className=" rounded-[24px] flex flex-col md:flex-row  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box w-full md:w-[600px]  items-center ">
          <div
             style={{ backgroundColor: props.color ? props.color : "#F2F2F2" }}
-            className=" flex items-center    h-full px-6  md:px-12"
+            className=" flex items-center justify-center  h-auto  md:h-full w-full md:w-fit py-7 px-10"
          >
             <Image
                src={props.icon ? props.icon : pedoman1}
@@ -20,11 +20,11 @@ export function PedomanCard(props: {
                alt=""
             />
          </div>
-         <div className="py-5 pe-5">
+         <div className="py-5 px-5 text-center md:text-left">
             <h1 className="text-[1.5rem] md:text-[2rem]">
                {props.title ? props.title : "COMMUNITY SPACE"}
             </h1>
-            <p className="pe-10">
+            <p className="pe-0 md:pe-10">
                {props.desc
                   ? props.desc
                   : "Lorem ipsum dolor sit amet consectetur. Eget sagittis sagittis in ipsum pellentesque quam arcu enim. Ridiculus purus magna enim orci integer dui. Enim blandit odio."}
@@ -67,6 +67,9 @@ export function ImageCard(props: {
    const combinedClassNames = `mx-3 object-cover neu-box rounded-3xl border-3 border-black w-[${staticWidth}] h-[${staticHeight}] md:w-[${dynamicWidth}] md:h-[${dynamicHeight}]`;
    return (
       <Image
+         width={props.width ? props.width : 500}
+         height={props.height ? props.height : 300}
+         placeholder="blur"
          className={combinedClassNames}
          src={props.image ? props.image : imageExample}
          alt=""

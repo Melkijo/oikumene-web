@@ -169,20 +169,21 @@ export default function Home() {
                   </Parallax>
                </div>
             </div>
-
-            <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-[#0293E0] text-white rounded-2xl flex flex-col items-center">
-               <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5 text-center">
-                  yuk join yuk
-               </h1>
-               <p className="text-center">
-                  Lorem ipsum dolor sit amet consectetur. Porta nulla purus nibh
-                  non volutpat justo. Scelerisque sollicitudin eu vestibulum
-                  maecenas elementum varius vel enim. Viverra eu gravida semper
-                  fringilla natoque quis mi.
-               </p>
-               <button className="mt-5 px-5 py-4 border border-white rounded-2xl">
-                  Daftar
-               </button>
+            <div className="px-[3%]">
+               <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-[#0293E0] text-white rounded-2xl flex flex-col items-center">
+                  <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5 text-center">
+                     yuk join yuk
+                  </h1>
+                  <p className="text-center">
+                     Lorem ipsum dolor sit amet consectetur. Porta nulla purus
+                     nibh non volutpat justo. Scelerisque sollicitudin eu
+                     vestibulum maecenas elementum varius vel enim. Viverra eu
+                     gravida semper fringilla natoque quis mi.
+                  </p>
+                  <button className="mt-5 px-5 py-4 border border-white rounded-2xl">
+                     Daftar
+                  </button>
+               </div>
             </div>
 
             <Footer />
