@@ -25,21 +25,30 @@ export default function Navbar() {
                      className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                   >
                      <li>
-                        <a>Item 1</a>
+                        <a href="/">Beranda</a>
                      </li>
+
                      <li>
-                        <a>Parent</a>
-                        <ul className="p-2">
-                           <li>
-                              <a>Submenu 1</a>
-                           </li>
-                           <li>
-                              <a>Submenu 2</a>
-                           </li>
-                        </ul>
+                        <a href="/kegiatan">Event</a>
                      </li>
-                     <li>
-                        <a>Item 3</a>
+                     <li tabIndex={0}>
+                        <details>
+                           <summary>Tentang</summary>
+                           <ul className="p-2">
+                              <li>
+                                 <a href="/tentang">Tentang UKM Oikumene</a>
+                              </li>
+                              <li>
+                                 <a href="/tentang/sejarah">Sejarah</a>
+                              </li>
+                              <li>
+                                 <a href="/tentang/struktur">Struktur</a>
+                              </li>
+                              <li>
+                                 <a>Team</a>
+                              </li>
+                           </ul>
+                        </details>
                      </li>
                   </ul>
                </div>
@@ -59,7 +68,13 @@ export default function Navbar() {
                         <summary>Tentang</summary>
                         <ul className="p-2">
                            <li>
-                              <a>Struktur</a>
+                              <a href="/tentang">Tentang UKM Oikumene</a>
+                           </li>
+                           <li>
+                              <a href="/tentang/sejarah">Sejarah</a>
+                           </li>
+                           <li>
+                              <a href="/tentang/struktur">Struktur</a>
                            </li>
                            <li>
                               <a>Team</a>

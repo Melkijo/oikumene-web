@@ -30,6 +30,9 @@ export default function Index() {
                <KegiatanCard />
                <KegiatanCard />
                <KegiatanCard />
+               <KegiatanCard />
+               <KegiatanCard />
+               <KegiatanCard />
             </div>
             <div className="join flex justify-end">
                <button className="join-item btn">1</button>
