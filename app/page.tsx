@@ -1,10 +1,5 @@
 "use client";
-import Navbar from "@/components/Navbar";
-
 import Image from "next/image";
-import imageExample from "@/assets/example.jpg";
-
-import Footer from "@/components/Footer";
 import hero1 from "@/assets/hero1.png";
 import hero2 from "@/assets/hero2.png";
 import hero3 from "@/assets/hero3.png";
@@ -19,18 +14,17 @@ export default function Home() {
    return (
       <div>
          <ParallaxProvider>
-            <Navbar />
             <div className="max-w-[1440px] mx-auto px-[3%]">
                <div className="relative mb-10">
                   <Image
                      src={hero1}
                      alt=""
-                     className="absolute bottom-0 w-[150px] md:w-[200px]"
+                     className="absolute bottom-0 w-[150px] md:w-[200px] hidden md:block"
                   />
                   <Image
                      src={hero2}
                      alt=""
-                     className="absolute top-[50px] w-[150px] md:w-[200px]"
+                     className="absolute top-[50px] w-[150px] md:w-[200px] hidden md:block"
                   />
                   <Image
                      src={hero3}
@@ -40,12 +34,12 @@ export default function Home() {
                   <Image
                      src={hero4}
                      alt=""
-                     className="  absolute right-0 top-[50px] w-[150px] md:w-[200px]"
+                     className="  absolute right-0 top-[50px] w-[150px] md:w-[200px] hidden md:block"
                   />
                   <Image
                      src={hero5}
                      alt=""
-                     className="absolute right-0 bottom-0 w-[150px] md:w-[200px]"
+                     className="absolute right-0 bottom-0 w-[150px] md:w-[200px] hidden md:block"
                   />
                   {/* <Star color="#63E296" className="absolute right-0" />
                   <Star color="#6983FF" className="absolute right-[450px]" />
@@ -54,7 +48,7 @@ export default function Home() {
                      className="absolute right-[300px] top-[50px]"
                   /> */}
 
-                  <div className=" flex flex-col items-center  mx-auto py-[225px]">
+                  <div className=" flex flex-col items-center  mx-auto py-[75px]  md:py-[225px]">
                      <p className="text-[1.5rem] md:text-[2rem]  font-light mb-2 md:mb-8">
                         {" "}
                         UNIVERSITAS MATARAM{" "}
@@ -85,6 +79,10 @@ export default function Home() {
                         welcome
                      </h1>
                      <Image src={welcomeIcon} alt="" />
+                     <h1 className="text-[25px] md:text-[40px] leading-none  ">
+                        shalom
+                     </h1>
+                     <Image src={welcomeIcon} alt="" />
                   </div>
                </Marquee>
             </div>
@@ -105,10 +103,10 @@ export default function Home() {
                </div>
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-[3%]">
-               <div className="flex flex-col md:flex-row items-start mt-28 mb-5 justify-between">
-                  <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] ">
-                     tak kenal maka tak sayang ~
+            <div className=" bg-blue-500 text-white py-10">
+               <div className="max-w-[1440px] mx-auto px-[3%] flex flex-col md:flex-row items-start  pb-5 justify-between">
+                  <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-3">
+                     tak kenal maka tak sayang~
                   </h1>
                   <div className="text-center md:text-left w-full md:w-[650px] ">
                      <p>
@@ -119,14 +117,14 @@ export default function Home() {
                      </p>
                   </div>
                </div>
+               <Marquee
+                  className=" overflow-y-hidden overflow-x-hidden pb-5 "
+                  speed={100}
+                  autoFill={true}
+               >
+                  <ImageCard />
+               </Marquee>
             </div>
-            <Marquee
-               className=" overflow-y-hidden overflow-x-hidden pb-10"
-               speed={100}
-               autoFill={true}
-            >
-               <ImageCard />
-            </Marquee>
 
             <div className="max-w-[1440px] mx-auto px-[3%] mt-20">
                <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
@@ -187,8 +185,6 @@ export default function Home() {
                   </button>
                </div>
             </div>
-
-            <Footer />
          </ParallaxProvider>
       </div>
    );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import pedoman1 from "@/assets/pedoman1.png";
 import imageExample from "@/assets/example.jpg";
+import Link from "next/link";
 
 export function PedomanCard(props: {
    icon?: string;
@@ -34,7 +35,7 @@ export function PedomanCard(props: {
    );
 }
 
-export function KegiatanCard() {
+export function KegiatanCard(props: { id?: string | number }) {
    return (
       <div className="basis-1/3 max-w-[600px] neu-box rounded-2xl overflow-hidden border-[3px] border-black">
          <Image
@@ -49,9 +50,12 @@ export function KegiatanCard() {
                ipsum pellentesque quam arcu enim. Ridiculus purus magna enim
                orci integer dui. Enim blandit odio.
             </p>
-            <a href="" className="text-blue-500 underline  w-fit mt-3">
+            <Link
+               href={`/kegiatan/${props.id?.toString() ? props.id : "1"}`}
+               className="text-blue-500 underline  w-fit mt-3"
+            >
                View More
-            </a>
+            </Link>
          </div>
       </div>
    );
@@ -67,7 +71,7 @@ export function ImageCard(props: {
    const staticWidth = `${props.width ? props.width : 500}px`;
    const staticHeight = `${props.height ? props.height : 300}px`;
 
-   const combinedClassNames = `mx-3 object-cover neu-box rounded-3xl border-3 border-black w-[${staticWidth}] h-[${staticHeight}] md:w-[${dynamicWidth}] md:h-[${dynamicHeight}]`;
+   const combinedClassNames = `mx-3 object-cover neu-box rounded-3xl border-[3px] border-black w-[${staticWidth}] h-[${staticHeight}] md:w-[${dynamicWidth}] md:h-[${dynamicHeight}]`;
    return (
       <Image
          width={props.width ? props.width : 500}

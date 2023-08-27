@@ -48,11 +48,11 @@ export default function Navbar() {
             <div className="navbar-center hidden lg:flex">
                <ul className="menu menu-horizontal px-1">
                   <li>
-                     <a>Beranda</a>
+                     <a href="/">Beranda</a>
                   </li>
 
                   <li>
-                     <a>Event</a>
+                     <a href="/kegiatan">Event</a>
                   </li>
                   <li tabIndex={0}>
                      <details>
