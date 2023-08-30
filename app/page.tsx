@@ -10,6 +10,8 @@ import { HeroDown, Star, Sun } from "@/components/Icons";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import Marquee from "react-fast-marquee";
 import { PedomanCard, KegiatanCard, ImageCard } from "@/components/Card";
+import { dataKegiatan } from "@/data";
+import { randomUUID } from "crypto";
 export default function Home() {
    return (
       <div>
@@ -91,12 +93,12 @@ export default function Home() {
                <h1 className="text-center md:text-left text-[3rem] md:text-[4rem]  mb-5">
                   PEDOMAN KAMI
                </h1>
-               <div className="flex flex-col gap-10">
-                  <div className="  flex flex-col md:flex-row gap-10  ">
+               <div className="flex flex-col gap-10   ">
+                  <div className="  flex flex-col lg:flex-row gap-10  ">
                      <PedomanCard color="#63E296" />
                      <PedomanCard color="#323643" />
                   </div>
-                  <div className="flex flex-col md:flex-row gap-10 ">
+                  <div className="flex flex-col lg:flex-row gap-10 ">
                      <PedomanCard color="#FA5656" desc="Halo" />
                      <PedomanCard color="#0293E0" desc="tes" />
                   </div>
@@ -131,9 +133,14 @@ export default function Home() {
                   kegiatan kami
                </h1>
                <div className="flex justify-center items-center flex-col lg:flex-row gap-10 ">
-                  <KegiatanCard />
-                  <KegiatanCard />
-                  <KegiatanCard />
+                  {dataKegiatan.slice(0, 3).map((item, index) => (
+                     <KegiatanCard
+                        id={item.id}
+                        title={item.title}
+                        desc={item.desc}
+                        key={index}
+                     />
+                  ))}
                </div>
             </div>
 

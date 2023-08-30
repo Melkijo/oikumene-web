@@ -10,10 +10,10 @@ export function PedomanCard(props: {
    color?: string;
 }) {
    return (
-      <div className="basis-full  md:basis-1/2 rounded-[24px] flex flex-col md:flex-row  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box  items-center ">
+      <div className="basis-full max-w-[500px] lg:max-w-full lg:basis-1/2 rounded-[24px] flex flex-col lg:flex-row  bg-white border-[3px] border-black min-h-[200px] overflow-hidden neu-box  items-center ">
          <div
             style={{ backgroundColor: props.color ? props.color : "#F2F2F2" }}
-            className=" flex items-center justify-center  h-auto  md:h-full w-full md:w-fit py-7 px-10"
+            className=" lg:max-w-[300px] flex items-center justify-center h-full  w-full lg:w-fit py-7 px-10"
          >
             <Image
                src={props.icon ? props.icon : pedoman1}
@@ -35,23 +35,27 @@ export function PedomanCard(props: {
    );
 }
 
-export function KegiatanCard(props: { id?: string | number }) {
+export function KegiatanCard(props: {
+   id?: string;
+   title?: string;
+   desc?: string;
+}) {
    return (
-      <div className="basis-1/3 max-w-[600px] neu-box rounded-2xl overflow-hidden border-[3px] border-black">
+      <div className="basis-1/3 max-w-[500px]  w-full neu-box rounded-2xl overflow-hidden border-[3px] border-black">
          <Image
             src={imageExample}
             alt=""
             className="w-full h-[215px] object-cover"
          />
          <div className="p-5 flex flex-col ">
-            <h5 className="text-2xl">Natal Bersama UKM OIkumene 2023</h5>
-            <p className=" line-clamp-3">
-               Lorem ipsum dolor sit amet consectetur. Eget sagittis sagittis in
-               ipsum pellentesque quam arcu enim. Ridiculus purus magna enim
-               orci integer dui. Enim blandit odio.
+            <h5 className="text-2xl">
+               {props.title ? props.title : "Natal Bersama UKM OIkumene 2023"}
+            </h5>
+            <p className="h-[80px]  line-clamp-3">
+               {props.desc ? props.desc : "Lorem ipsum dolor sit amet c"}
             </p>
             <Link
-               href={`/kegiatan/${props.id?.toString() ? props.id : "1"}`}
+               href={`/kegiatan/${props.id ? props.id : "1"}`}
                className="text-blue-500 underline  w-fit mt-3"
             >
                View More

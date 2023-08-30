@@ -1,4 +1,5 @@
 import { KegiatanCard } from "@/components/Card";
+import { dataKegiatan } from "@/data";
 
 export default function Index() {
    return (
@@ -24,15 +25,14 @@ export default function Index() {
 
          <div className="max-w-[1440px] mx-auto px-[3%] mt-10 mb-10">
             <div className=" mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 ">
-               <KegiatanCard id={5} />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
-               <KegiatanCard />
+               {dataKegiatan.map((item, index) => (
+                  <KegiatanCard
+                     id={item.id}
+                     title={item.title}
+                     desc={item.desc}
+                     key={index}
+                  />
+               ))}
             </div>
             <div className="join flex justify-end">
                <button className="join-item btn">1</button>

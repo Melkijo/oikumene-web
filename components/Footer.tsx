@@ -76,13 +76,11 @@ export default function Footer() {
                   </ul>
                </div>
             </div>
-            <div className="flex flex-wrap gap-5 justify-between pt-20">
+            <div className="flex flex-col-reverse md:flex-row gap-5 justify-between pt-20">
                <p>
                   <a href="">Behind the scene</a>
                </p>
-               <p className="text-center">
-                  © 2023 UKM Oikumene. All Rights Reserved
-               </p>
+               <p>© 2023 UKM Oikumene. All Rights Reserved</p>
             </div>
          </div>
       </div>
