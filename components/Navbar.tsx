@@ -11,9 +11,8 @@ import {
    NavbarMenuItem,
 } from "@nextui-org/react";
 
-export default function MainNavbar() {
+export function MainNavbar() {
    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-   const menuItems = ["Beranda", "Kegiatan", "Tentang"];
    return (
       <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl">
          <NavbarContent>
