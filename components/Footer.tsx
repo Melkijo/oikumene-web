@@ -78,7 +78,13 @@ export default function Footer() {
             </div>
             <div className="flex flex-col-reverse md:flex-row gap-5 justify-between pt-20">
                <p>
-                  <a href="">Behind the scene</a>
+                  <a
+                     href="https://mejodev.vercel.app"
+                     className="underline font-extralight"
+                     target="_blank"
+                  >
+                     Behind the scene
+                  </a>
                </p>
                <p>© 2023 UKM Oikumene. All Rights Reserved</p>
             </div>
