@@ -47,13 +47,15 @@ export function KegiatanCard(props: {
             alt=""
             className="w-full h-[215px] object-cover"
          />
-         <div className="p-5 flex flex-col ">
+         <div className="p-5 flex flex-col overflow-hidden">
             <h5 className="text-2xl">
                {props.title ? props.title : "Natal Bersama UKM OIkumene 2023"}
             </h5>
-            <p className="h-[80px]  line-clamp-3">
-               {props.desc ? props.desc : "Lorem ipsum dolor sit amet c"}
-            </p>
+            <div className="h-[80px] ">
+               <p className=" line-clamp-3">
+                  {props.desc ? props.desc : "Lorem ipsum dolor sit amet c"}
+               </p>
+            </div>
             <Link
                href={`/kegiatan/${props.id ? props.id : "1"}`}
                className="text-blue-500 underline  w-fit mt-3"

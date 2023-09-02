@@ -1,17 +1,17 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { work_sans, lalezar } from "../fonts";
-import Footer from "@/components/Footer";
 import { Suspense } from "react";
-import Loading from "../loading";
-import { Providers } from "../providers";
+import Loading from "../(utama)/loading";
+import { Providers } from "../(utama)/providers";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
    title: "UKM Oikumene",
    description: "UKM Oikumene universitas mataram",
 };
 
-export default function AdminLayout({
+export default function RootLayout({
    children,
 }: {
    children: React.ReactNode;
@@ -20,7 +20,9 @@ export default function AdminLayout({
       <html lang="en" className={`${work_sans.variable} ${lalezar.variable}`}>
          <body>
             <Providers>
-               <Suspense fallback={<Loading />}>{children}</Suspense>
+               <Sidebar>
+                  <Suspense fallback={<Loading />}>{children}</Suspense>
+               </Sidebar>
             </Providers>
          </body>
       </html>

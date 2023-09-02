@@ -5,7 +5,7 @@ import { Button, Input } from "@nextui-org/react";
 export default function Page() {
    return (
       <>
-         <div className="flex justify-center flex-col items-center gap-5 my-40">
+         <div className="flex justify-center flex-col items-center gap-5 my-40 ">
             <h1>Login</h1>
 
             <form action="">
