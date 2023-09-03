@@ -105,15 +105,15 @@ export default function Home() {
             </div>
 
             <div className="max-w-[1440px] mx-auto px-[3%] my-20">
-               <h1 className="text-center md:text-left text-[3rem] md:text-[4rem]  mb-5">
+               <h1 className="text-center lg:text-left text-[3rem] md:text-[4rem]  mb-5">
                   PEDOMAN KAMI
                </h1>
-               <div className="flex flex-col gap-10   ">
-                  <div className="  flex flex-col lg:flex-row gap-10  ">
+               <div className="flex flex-col gap-10">
+                  <div className="  flex flex-col lg:flex-row gap-10 ">
                      <PedomanCard color="#63E296" />
                      <PedomanCard color="#323643" />
                   </div>
-                  <div className="flex flex-col lg:flex-row gap-10 ">
+                  <div className="flex flex-col lg:flex-row gap-10  ">
                      <PedomanCard color="#FA5656" desc="Halo" />
                      <PedomanCard color="#0293E0" desc="tes" />
                   </div>

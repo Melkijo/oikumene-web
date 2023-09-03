@@ -3,6 +3,8 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
 
 export default function Sidebar({ children }: { children: React.ReactNode }) {
    const pathname = usePathname();
@@ -10,6 +12,14 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       { name: "Dashboard", href: "/admin/dashboard" },
       { name: "kegiatan", href: "/admin/kegiatan" },
    ];
+   const router = useRouter();
+   const supabase = createClientComponentClient();
+
+   const handleSignOut = async () => {
+      await supabase.auth.signOut();
+      router.push("/");
+      //   console.log("logout");
+   };
    return (
       <>
          <div className="flex">
@@ -47,11 +57,10 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
             <div className="flex flex-col ">
                <div className="w-screen ps-[275px] h-[75px] bg-white border border-b-2 flex items-center justify-between pe-[25px]">
                   <h3> Hai Admin!</h3>
-                  <Link href="/">
-                     <Button color="danger" size="sm">
-                        Logout
-                     </Button>
-                  </Link>
+
+                  <Button color="danger" size="sm" onClick={handleSignOut}>
+                     Logout
+                  </Button>
                </div>
                <div className="ps-[275px] pe-[25px] pt-[25px]">{children}</div>
             </div>
