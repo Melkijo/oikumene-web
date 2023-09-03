@@ -1,7 +1,7 @@
 export default function Index() {
    return (
       <>
-         <h1>Tentang</h1>
+         <h1>Tentang ini aja</h1>
       </>
    );
 }

@@ -2,6 +2,7 @@
 import { KegiatanCard } from "@/components/Card";
 import Image from "next/image";
 import Link from "next/link";
+import imageExample from "@/assets/example.jpg";
 
 import { Kegiatan } from "@/types";
 import { useEffect, useState } from "react";
@@ -28,9 +29,13 @@ export default async function Page({ params }: { params: { id: string } }) {
          <div className="max-w-[1440px] mx-auto px-[3%] my-10">
             <div className="flex gap-10 pb-10 flex-col md:flex-row">
                <Image
-                  src="https://images.pexels.com/photos/11042183/pexels-photo-11042183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src={
+                     kegiatan[0].thumbnail
+                        ? kegiatan[0].thumbnail
+                        : imageExample
+                  }
                   alt="ini gambar"
-                  width={1440}
+                  width={200}
                   height={200}
                   className="object-cover h-[400px] w-full basis-1/2 neu-box rounded-xl "
                />
