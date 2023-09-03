@@ -14,7 +14,7 @@ export const metadata: Metadata = {
    description: "UKM Oikumene universitas mataram",
 };
 
-export default async function RootLayout({
+export default async function AdminLayout({
    children,
 }: {
    children: React.ReactNode;
