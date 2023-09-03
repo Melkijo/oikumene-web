@@ -12,6 +12,7 @@ export const metadata: Metadata = {
    title: "UKM Oikumene",
    description: "UKM Oikumene universitas mataram",
 };
+export const dynamic = "force-dynamic";
 
 export default async function RootLayout({
    children,
