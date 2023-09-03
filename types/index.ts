@@ -4,5 +4,6 @@ export interface Kegiatan {
     desc: string;
     date: string;
     location: string;
+    thumbnail: string;
     link: string;
  }

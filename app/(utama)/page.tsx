@@ -35,27 +35,27 @@ export default function Home() {
                   <Image
                      src={hero1}
                      alt=""
-                     className="absolute bottom-0 w-[150px] md:w-[200px] hidden md:block"
+                     className="absolute bottom-0 w-[150px] md:w-[200px] hidden lg:block"
                   />
                   <Image
                      src={hero2}
                      alt=""
-                     className="absolute top-[50px] w-[150px] md:w-[200px] hidden md:block"
+                     className="absolute top-[50px] w-[150px] md:w-[200px] hidden lg:block"
                   />
                   <Image
                      src={hero3}
                      alt=""
-                     className="absolute right-[500px] top-[25px] hidden md:block"
+                     className="absolute right-[500px] top-[25px] hidden lg:block"
                   />
                   <Image
                      src={hero4}
                      alt=""
-                     className="  absolute right-0 top-[50px] w-[150px] md:w-[200px] hidden md:block"
+                     className="  absolute right-0 top-[50px] w-[150px] md:w-[200px] hidden lg:block"
                   />
                   <Image
                      src={hero5}
                      alt=""
-                     className="absolute right-0 bottom-0 w-[150px] md:w-[200px] hidden md:block"
+                     className="absolute right-0 bottom-0 w-[150px] md:w-[200px] hidden lg:block"
                   />
                   {/* <Star color="#63E296" className="absolute right-0" />
                   <Star color="#6983FF" className="absolute right-[450px]" />
@@ -108,7 +108,7 @@ export default function Home() {
                <h1 className="text-center lg:text-left text-[3rem] md:text-[4rem]  mb-5">
                   PEDOMAN KAMI
                </h1>
-               <div className="flex flex-col gap-10">
+               <div className="flex flex-col gap-10 lg:items-stretch sm:items-center items-stretch ">
                   <div className="  flex flex-col lg:flex-row gap-10 ">
                      <PedomanCard color="#63E296" />
                      <PedomanCard color="#323643" />
@@ -144,7 +144,7 @@ export default function Home() {
             </div>
 
             <div className="max-w-[1440px] mx-auto px-[3%] mt-20">
-               <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
+               <h1 className="text-center lg:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
                   kegiatan kami
                </h1>
                <div className="flex justify-center items-center flex-col lg:flex-row gap-10 ">

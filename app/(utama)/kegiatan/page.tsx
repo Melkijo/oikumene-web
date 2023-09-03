@@ -19,6 +19,7 @@ export default function Index() {
       const data = await res.json();
       setKegiatan(data.data);
    }
+   console.log(kegiatan);
    if (!kegiatan) {
       return <div>Loading...</div>;
    }
@@ -49,6 +50,7 @@ export default function Index() {
                      id={item.id}
                      title={item.title}
                      desc={item.desc}
+                     thumbnail={item.thumbnail}
                      key={index}
                   />
                ))}

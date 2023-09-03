@@ -21,6 +21,6 @@ export async function POST(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
     const body =await request.json();
     console.log(body.id);
-     await supabase.from('kegiatan').delete().eq('id', body.id);
+    const {error} = await supabase.from('kegiatan').delete().eq('id', body.id);
     return NextResponse.json( {message:"this worked", success: true} );
 }

@@ -1,5 +1,7 @@
+"use client";
 import footer1 from "@/assets/footer1.png";
 import footer2 from "@/assets/footer2.png";
+import { Link } from "@nextui-org/react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -23,13 +25,19 @@ export default function Footer() {
                      </li>
 
                      <li>
-                        <a href="">Beranda</a>
+                        <Link href="/" className="text-white">
+                           Beranda
+                        </Link>
                      </li>
                      <li>
-                        <a href="">Kegiatan</a>
+                        <Link href="/kegiatan" className="text-white">
+                           Kegiatan
+                        </Link>
                      </li>
                      <li>
-                        <a href="">Tentang</a>
+                        <Link href="/tentang" className="text-white">
+                           Tentang
+                        </Link>
                      </li>
                   </ul>
                   <ul className="flex flex-col gap-5">
@@ -53,13 +61,28 @@ export default function Footer() {
                      </li>
 
                      <li>
-                        <a href="">Instagram</a>
+                        <a
+                           href="https://www.instagram.com/ukmoikumene_unram/"
+                           target="_blank"
+                        >
+                           Instagram
+                        </a>
                      </li>
                      <li>
-                        <a href="">Tiktok</a>
+                        <a
+                           href="https://www.tiktok.com/@ukmoikumene_unram"
+                           target="_blank"
+                        >
+                           Tiktok
+                        </a>
                      </li>
                      <li>
-                        <a href="">Youtube</a>
+                        <a
+                           href="https://www.youtube.com/@ukmoikumeneunram2506"
+                           target="_blank"
+                        >
+                           Youtube
+                        </a>
                      </li>
                   </ul>
                   <ul className="flex flex-col gap-5">
@@ -71,7 +94,7 @@ export default function Footer() {
                         <a href="">ukmoikumene@gmail.com</a>
                      </li>
                      <li>
-                        <a href="">Tiktok</a>
+                        <a href="">+6281 77521 2222</a>
                      </li>
                   </ul>
                </div>

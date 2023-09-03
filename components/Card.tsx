@@ -39,12 +39,15 @@ export function KegiatanCard(props: {
    id?: string;
    title?: string;
    desc?: string;
+   thumbnail?: string;
 }) {
    return (
       <div className="basis-1/3 max-w-[500px]  w-full neu-box rounded-2xl overflow-hidden border-[3px] border-black">
          <Image
-            src={imageExample}
+            src={props.thumbnail ? props.thumbnail : imageExample}
             alt=""
+            width={500}
+            height={500}
             className="w-full h-[215px] object-cover"
          />
          <div className="p-5 flex flex-col overflow-hidden">
