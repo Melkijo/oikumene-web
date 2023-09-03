@@ -13,6 +13,6 @@ export async function GET(request: Request, {params}: {params: {id: string}}) {
 
 export async function PUT (request: NextRequest, {params}: {params: {id: string}}) {
     const body =await request.json();
-    const {error} = await supabase.from('kegiatan').update(body.data).eq('id', params.id);
+    await supabase.from('kegiatan').update(body.data).eq('id', params.id);
     return NextResponse.json( {message:"this worked", success: true} );
 }

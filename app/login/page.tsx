@@ -10,13 +10,11 @@ export default function Login() {
    const [password, setPassword] = useState("");
    const router = useRouter();
    const supabase = createClientComponentClient();
-   console.log(supabase);
    const handleSignIn = async () => {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data } = await supabase.auth.signInWithPassword({
          email: email,
          password: password,
       });
-      console.log(data);
 
       if (data.session !== null) {
          router.push("/admin/dashboard");

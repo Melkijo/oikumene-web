@@ -14,13 +14,13 @@ export async function GET(request: Request) {
 
 export async function POST(request: NextRequest) {
     const body =await request.json();
-    const {error} = await supabase.from('kegiatan').insert(body.data);
+    await supabase.from('kegiatan').insert(body.data);
     return NextResponse.json( {message:"this worked", success: true} );
 }
 
 export async function DELETE(request: NextRequest) {
     const body =await request.json();
     console.log(body.id);
-    const {error} = await supabase.from('kegiatan').delete().eq('id', body.id);
+     await supabase.from('kegiatan').delete().eq('id', body.id);
     return NextResponse.json( {message:"this worked", success: true} );
 }

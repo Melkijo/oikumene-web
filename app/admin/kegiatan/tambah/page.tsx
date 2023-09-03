@@ -19,8 +19,6 @@ export default function page() {
          },
          body: JSON.stringify({ data }),
       });
-
-      console.log(JSON.stringify(data));
    }
    return (
       <div>

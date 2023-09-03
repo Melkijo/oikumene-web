@@ -148,17 +148,14 @@ export default function Home() {
                   kegiatan kami
                </h1>
                <div className="flex justify-center items-center flex-col lg:flex-row gap-10 ">
-                  {kegiatan &&
-                     kegiatan
-                        .slice(0, 3)
-                        .map((item, index) => (
-                           <KegiatanCard
-                              id={item.id}
-                              title={item.title}
-                              desc={item.desc}
-                              key={index}
-                           />
-                        ))}
+                  {kegiatan?.slice(0, 3).map((item, index) => (
+                     <KegiatanCard
+                        id={item.id}
+                        title={item.title}
+                        desc={item.desc}
+                        key={index}
+                     />
+                  ))}
                </div>
             </div>
 
