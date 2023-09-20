@@ -1,10 +1,9 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useRouter } from "next/navigation";
 
 export default function Sidebar({ children }: { children: React.ReactNode }) {
    const pathname = usePathname();
@@ -18,7 +17,6 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
    const handleSignOut = async () => {
       await supabase.auth.signOut();
       router.push("/");
-      //   console.log("logout");
    };
    return (
       <>
@@ -35,9 +33,8 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                      {navLink.map((link, index) => {
                         const isActive = pathname === link.href;
                         return (
-                           <li>
+                           <li key={index}>
                               <Link
-                                 key={index}
                                  href={link.href}
                                  className={
                                     isActive ? "text-blue-200" : "text-white"

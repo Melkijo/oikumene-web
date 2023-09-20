@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
-import { createClient } from "@supabase/supabase-js/dist/module";
-import { Input, Textarea } from "@nextui-org/react";
-const supabase = createClient(
-   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { Button, Input } from "@nextui-org/react";
+import { supabase } from "@/lib";
+
 export default function page() {
    async function handleSubmit(e: any) {
       e.preventDefault();
+
       const thumbnail: any = e.target.thumbnail.files[0];
 
       const imgUpload = await supabase.storage
@@ -50,63 +48,96 @@ export default function page() {
          <form onSubmit={handleSubmit}>
             <div className="flex gap-5 my-5">
                <div className="basis-1/2 flex flex-col gap-5">
-                  <Input
-                     key="outside"
-                     type="text"
-                     label="Nama"
-                     name="name"
-                     labelPlacement="outside"
-                     placeholder="kegiatan"
-                  />
-                  <Input
-                     key="outside"
-                     type="date"
-                     name="date"
-                     label="Tanggal kegiatan"
-                     labelPlacement="outside"
-                     placeholder="Enter your email"
-                  />
-                  <Input
-                     key="outside"
-                     type="file"
-                     name="thumbnail"
-                     label="Thumbnail"
-                     labelPlacement="outside"
-                     placeholder="Enter your email"
-                  />
-                  <Input
-                     key="outside"
-                     type="text"
-                     label="Link Foto"
-                     name="link"
-                     labelPlacement="outside"
-                     placeholder="link foto"
-                  />
-                  <Input
-                     key="outside"
-                     type="text"
-                     label="location"
-                     name="location"
-                     labelPlacement="outside"
-                     placeholder="lokasi"
-                  />
+                  <div>
+                     <label htmlFor="">Name</label>
+                     <Input
+                        key="outside"
+                        type="text"
+                        variant="bordered"
+                        size="lg"
+                        className="bg-white pt-2"
+                        name="name"
+                        placeholder="kegiatan"
+                        isRequired
+                     />
+                  </div>
+
+                  <div>
+                     <label htmlFor="">Date</label>
+                     <Input
+                        key="outside"
+                        type="date"
+                        variant="bordered"
+                        size="lg"
+                        className="bg-white  pt-2"
+                        name="date"
+                        labelPlacement="outside"
+                        isRequired
+                     />
+                  </div>
+                  <div>
+                     <label htmlFor="file-input">Thumbnail</label>
+                     <input
+                        type="file"
+                        name="thumbnail"
+                        id="file-input"
+                        className="block w-full  mt-2 border border-gray-300 shadow-sm rounded-xl text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 
+                        file:bg-transparent file:border-0
+                        file:bg-gray-100 file:mr-4
+                        file:py-3 file:px-4
+                        "
+                        required
+                     />
+                  </div>
+                  <div>
+                     <label htmlFor="">Link Gdrive</label>
+                     <Input
+                        key="outside"
+                        type="text"
+                        variant="bordered"
+                        size="lg"
+                        className="bg-white  pt-2"
+                        name="link"
+                        placeholder="link foto"
+                        isRequired
+                     />
+                  </div>
+                  <div>
+                     <label htmlFor="">Location</label>
+                     <Input
+                        key="outside"
+                        type="text"
+                        name="location"
+                        variant="bordered"
+                        size="lg"
+                        className="bg-white  pt-2"
+                        placeholder="location"
+                        isRequired
+                     />
+                  </div>
                </div>
                <div className="basis-1/2 h-fit">
-                  <Textarea
-                     label="Description"
-                     name="desc"
-                     labelPlacement="outside"
-                     placeholder="Enter your description"
-                     className="max-w-full "
-                  />
+                  <div>
+                     <label htmlFor="">Description</label>
+                     {/* <Textarea
+                        name="desc"
+                        variant="bordered"
+                        size="lg"
+                        className="bg-white max-w-full h-[200px] pt-2"
+                        placeholder="Enter your description"
+                        required
+                     /> */}
+                     <textarea
+                        name="desc"
+                        className="py-3 px-4 block mt-2 h-[200px] w-full border border-gray-300 rounded-xl text-sm focus:border-blue-500 focus:ring-blue-500 "
+                        required
+                     ></textarea>
+                  </div>
                </div>
             </div>
-
-            <Input
-               type="submit"
-               className="hover:cursor-wait"
-               labelPlacement="outside"
-            />
+            <Button type="submit" color="primary" size="lg">
+               Submit
+            </Button>
          </form>
       </div>
    );

@@ -8,13 +8,23 @@ import {
    TableRow,
    TableCell,
    Button,
+   Spinner,
+   Modal,
+   ModalContent,
+   ModalHeader,
+   ModalBody,
+   ModalFooter,
+   useDisclosure,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { Kegiatan } from "@/types";
+import DeleteModal from "@/components/Modal";
 
-export default function page() {
+export default function Page() {
    const [kegiatan, setKegiatan] = useState<Kegiatan[]>([]);
+   const [itemRemove, setItemRemove] = useState<any>();
 
+   const { isOpen, onOpen, onOpenChange } = useDisclosure();
    useEffect(() => {
       getKegiatan();
    }, []);
@@ -27,38 +37,34 @@ export default function page() {
       setKegiatan(data.data);
    }
 
-   const handleDelete = async (id: string) => {
-      const res = await fetch("../api/kegiatan", {
-         method: "DELETE",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify({ id }),
-      });
-      console.log(id, "delete");
-   };
-   return (
-      <>
-         <div className="flex justify-between mb-[20px] items-center">
-            <h1 className="text-[2rem]">semua kegiatan</h1>
-            <Link href="/admin/kegiatan/tambah">
-               <Button color="success" className="text-white">
-                  + Kegiatan
-               </Button>
-            </Link>
+   if (kegiatan == null) {
+      return (
+         <div className="h-[80vh]   flex justify-center">
+            <Spinner />
          </div>
-         <Table isStriped aria-label="Example static collection table">
-            <TableHeader>
-               <TableColumn>NAME</TableColumn>
-               <TableColumn>LINK</TableColumn>
-               <TableColumn>DATE</TableColumn>
-               <TableColumn>LOCATION</TableColumn>
-               <TableColumn>DESC</TableColumn>
-               <TableColumn>ACTION</TableColumn>
-            </TableHeader>
-            <TableBody>
-               {kegiatan &&
-                  kegiatan.map((item, index) => (
+      );
+   } else {
+      return (
+         <>
+            <div className="flex justify-between mb-[20px] items-center">
+               <h1 className="text-[2rem]">semua kegiatan</h1>
+               <Link href="/admin/kegiatan/tambah">
+                  <Button color="success" className="text-white">
+                     + Kegiatan
+                  </Button>
+               </Link>
+            </div>
+            <Table isStriped aria-label="Example static collection table">
+               <TableHeader>
+                  <TableColumn>NAME</TableColumn>
+                  <TableColumn>LINK</TableColumn>
+                  <TableColumn>DATE</TableColumn>
+                  <TableColumn>LOCATION</TableColumn>
+                  <TableColumn>DESC</TableColumn>
+                  <TableColumn>ACTION</TableColumn>
+               </TableHeader>
+               <TableBody>
+                  {kegiatan.map((item, index) => (
                      <TableRow key={index}>
                         <TableCell>{item.title}</TableCell>
                         <TableCell>{item.link}</TableCell>
@@ -80,7 +86,14 @@ export default function page() {
                               <Button
                                  size="sm"
                                  color="danger"
-                                 onClick={() => handleDelete(item.id)}
+                                 onPress={onOpen}
+                                 onClick={() =>
+                                    setItemRemove({
+                                       id: item.id,
+                                       title: item.title,
+                                    })
+                                 }
+                                 //  onClick={() => handleDelete(item.id)}
                               >
                                  Delete
                               </Button>
@@ -88,8 +101,15 @@ export default function page() {
                         </TableCell>
                      </TableRow>
                   ))}
-            </TableBody>
-         </Table>
-      </>
-   );
+               </TableBody>
+            </Table>
+
+            <DeleteModal
+               isOpen={isOpen}
+               onOpenChange={onOpenChange}
+               item={itemRemove}
+            />
+         </>
+      );
+   }
 }

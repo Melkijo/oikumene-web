@@ -1,10 +1,6 @@
-import { createClient } from "@supabase/supabase-js/dist/module";
 import { NextRequest,NextResponse } from "next/server"
+import { supabase } from "@/lib";
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!, 
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export async function GET(request: Request, {params}: {params: {id: string}}) {
     const {data} = await supabase.from('kegiatan').select('*').eq('id', params.id);

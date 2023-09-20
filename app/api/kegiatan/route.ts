@@ -1,11 +1,6 @@
-
-import { createClient } from "@supabase/supabase-js/dist/module";
 import { NextRequest,NextResponse } from "next/server"
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!, 
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { supabase } from "@/lib";
+import { redirect } from "next/dist/server/api-utils";
 
 export async function GET(request: Request) {
     const {data} = await supabase.from('kegiatan').select('*');
@@ -15,12 +10,14 @@ export async function GET(request: Request) {
 export async function POST(request: NextRequest) {
     const body =await request.json();
     await supabase.from('kegiatan').insert(body.data);
-    return NextResponse.json( {message:"this worked", success: true} );
+    //redirect to admin/kegiatan
+    return NextResponse.redirect(new URL('/admin/kegiatan', request.nextUrl).href);
+    
 }
 
 export async function DELETE(request: NextRequest) {
     const body =await request.json();
     console.log(body.id);
-    const {error} = await supabase.from('kegiatan').delete().eq('id', body.id);
+    await supabase.from('kegiatan').delete().eq('id', body.id);
     return NextResponse.json( {message:"this worked", success: true} );
 }

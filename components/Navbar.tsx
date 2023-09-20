@@ -16,9 +16,9 @@ export function MainNavbar() {
    const pathname = usePathname();
    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
    const navLink = [
-      { name: "beranda", href: "/" },
-      { name: "kegiatan", href: "/kegiatan" },
-      { name: "tentang", href: "/tentang" },
+      { name: "Beranda", href: "/" },
+      { name: "Kegiatan", href: "/kegiatan" },
+      { name: "Tentang", href: "/tentang" },
    ];
    return (
       <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="2xl">
@@ -42,11 +42,12 @@ export function MainNavbar() {
             justify="end"
          >
             {navLink.map((link, index) => (
-               <NavbarItem
-                  key={index}
-                  isActive={pathname === `${link.href}` ? true : false}
-               >
-                  <Link color="foreground" href={`${link.href}`}>
+               <NavbarItem key={index} isActive={pathname === `${link.href}`}>
+                  <Link
+                     color="foreground"
+                     href={`${link.href}`}
+                     className="text-lg"
+                  >
                      {link.name}
                   </Link>
                </NavbarItem>
@@ -57,7 +58,7 @@ export function MainNavbar() {
             {navLink.map((link, index) => (
                <NavbarMenuItem className="py-5" key={index}>
                   <Link
-                     className="w-full"
+                     className="w-full text-lg"
                      color="foreground"
                      href={`${link.href}`}
                      size="lg"
