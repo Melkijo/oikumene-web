@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                   alt="ini gambar"
                   width={200}
                   height={200}
-                  className="object-cover h-[400px] w-full basis-1/2 neu-box rounded-xl "
+                  className="object-cover max-h-[400px] w-full basis-1/2 neu-box rounded-xl "
                />
                <div className="basis-1/2 flex gap-3 flex-col">
                   <div>

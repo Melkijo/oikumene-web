@@ -2,26 +2,70 @@
 import React, { useEffect, useState } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { Kegiatan } from "@/types";
+import { createClient } from "@supabase/supabase-js/dist/module";
 
-export default function page({ params }: { params: { id: string } }) {
+const supabase = createClient(
+   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+export default function Page({ params }: { params: { id: string } }) {
    const [kegiatan, setKegiatan] = useState<Kegiatan[]>();
    async function handleEdit(e: any) {
+      //   console.log(e.target.thumbnail.files[0]);
       e.preventDefault();
-      const data = {
-         title: String(e.target.name.value),
-         link: String(e.target.link.value),
-         date: String(e.target.date.value),
-         location: String(e.target.location.value),
-         desc: String(e.target.desc.value),
-      };
+      if (!e.target.thumbnail.files[0]) {
+         console.log(kegiatan && kegiatan[0].thumbnail);
+         const data = {
+            title: String(e.target.name.value),
+            link: String(e.target.link.value),
+            date: String(e.target.date.value),
+            location: String(e.target.location.value),
+            desc: String(e.target.desc.value),
+            thumbnail: String(kegiatan && kegiatan[0].thumbnail),
+         };
+         await fetch(`/api/kegiatan/${params.id}`, {
+            method: "PUT",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ data }),
+         });
+      } else {
+         const thumbnail: any = e.target.thumbnail.files[0];
+         console.log(thumbnail.name);
+         const imgUpload = await supabase.storage
+            .from("oikumene")
+            .upload(`kegiatan/${thumbnail.name}`, thumbnail, {
+               cacheControl: "3600",
+               upsert: true,
+            });
+         console.log(imgUpload);
+         console.log(e.target.name.value);
+         if (imgUpload.data) {
+            const imgUrl = supabase.storage
+               .from("oikumene")
+               .getPublicUrl(imgUpload.data.path);
 
-      const res = await fetch(`/api/kegiatan/${params.id}`, {
-         method: "PUT",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify({ data }),
-      });
+            const data = {
+               title: String(e.target.name.value),
+               link: String(e.target.link.value),
+               date: String(e.target.date.value),
+               location: String(e.target.location.value),
+               desc: String(e.target.desc.value),
+               thumbnail: imgUrl.data.publicUrl,
+            };
+
+            console.log(data);
+            await fetch(`/api/kegiatan/${params.id}`, {
+               method: "PUT",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify({ data }),
+            });
+         }
+      }
    }
 
    useEffect(() => {
@@ -68,6 +112,8 @@ export default function page({ params }: { params: { id: string } }) {
                      type="file"
                      name="thumbnail"
                      label="Thumbnail"
+                     //  defaultValue={kegiatan[0].thumbnail}
+                     //  value={kegiatan[0].thumbnail}
                      labelPlacement="outside"
                      placeholder="Enter your email"
                   />
