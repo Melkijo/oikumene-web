@@ -1,12 +1,13 @@
 "use client";
-import React from "react";
-import { Button, Input } from "@nextui-org/react";
+import React, { useState } from "react";
+import { Button, Input, Spinner } from "@nextui-org/react";
 import { supabase } from "@/lib";
 
-export default function page() {
+export default function Page() {
+   const [loading, setLoading] = useState(false);
    async function handleSubmit(e: any) {
       e.preventDefault();
-
+      setLoading(true);
       const thumbnail: any = e.target.thumbnail.files[0];
 
       const imgUpload = await supabase.storage
@@ -31,15 +32,23 @@ export default function page() {
          };
          console.log(data);
 
-         await fetch("/api/kegiatan", {
+         const res = await fetch("/api/kegiatan", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
             },
             body: JSON.stringify({ data }),
          });
+         const resPost = await res.json();
+         if (resPost.message) {
+            setLoading(false);
+         }
+         alert(resPost.message);
       } else {
-         console.log(imgUpload.error);
+         alert(imgUpload.error.message);
+         setLoading(false);
+
+         console.log(imgUpload.error.message);
       }
    }
    return (
@@ -76,7 +85,7 @@ export default function page() {
                      />
                   </div>
                   <div>
-                     <label htmlFor="file-input">Thumbnail</label>
+                     <label htmlFor="file-input">Thumbnail (jpg, png)</label>
                      <input
                         type="file"
                         name="thumbnail"
@@ -86,6 +95,8 @@ export default function page() {
                         file:bg-gray-100 file:mr-4
                         file:py-3 file:px-4
                         "
+                        //only accept jpg and png file
+                        accept="image/png, image/jpeg"
                         required
                      />
                   </div>
@@ -135,9 +146,17 @@ export default function page() {
                   </div>
                </div>
             </div>
-            <Button type="submit" color="primary" size="lg">
-               Submit
-            </Button>
+            <div className="flex justify-end">
+               <Button
+                  type="submit"
+                  color="primary"
+                  size="lg"
+                  className="flex "
+               >
+                  Submit
+                  {loading ? <Spinner color="default" /> : null}
+               </Button>
+            </div>
          </form>
       </div>
    );

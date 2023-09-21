@@ -39,7 +39,7 @@ export default function Page() {
 
    if (kegiatan == null) {
       return (
-         <div className="h-[80vh]   flex justify-center">
+         <div className="h-[80vh]  flex justify-center">
             <Spinner />
          </div>
       );

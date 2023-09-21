@@ -1,6 +1,6 @@
 import { NextRequest,NextResponse } from "next/server"
 import { supabase } from "@/lib";
-import { redirect } from "next/dist/server/api-utils";
+
 
 export async function GET(request: Request) {
     const {data} = await supabase.from('kegiatan').select('*');
@@ -11,7 +11,8 @@ export async function POST(request: NextRequest) {
     const body =await request.json();
     await supabase.from('kegiatan').insert(body.data);
     //redirect to admin/kegiatan
-    return NextResponse.redirect(new URL('/admin/kegiatan', request.nextUrl).href);
+    return NextResponse.json( {message:"this worked", success: true} );
+
     
 }
 

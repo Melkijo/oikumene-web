@@ -17,7 +17,7 @@ export default function Index() {
       const data = await res.json();
       setKegiatan(data.data);
    }
-   if (kegiatan == null) {
+   if (kegiatan == null || kegiatan.length == 0) {
       return (
          <div className="h-[80vh]   flex justify-center">
             <Spinner />
