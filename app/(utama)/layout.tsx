@@ -8,25 +8,25 @@ import { MainNavbar } from "@/components/Navbar";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-   title: "UKM Oikumene",
-   description: "UKM Oikumene universitas mataram",
+  title: "UKM Oikumene",
+  description: "UKM Oikumene universitas mataram",
 };
 export const revalidate = 0;
 
 export default function RootLayout({
-   children,
+  children,
 }: {
-   children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-   return (
-      <html lang="en" className={`${work_sans.variable} ${lalezar.variable}`}>
-         <body>
-            <Providers>
-               <MainNavbar />
-               <Suspense fallback={<Loading />}>{children}</Suspense>
-               <Footer />
-            </Providers>
-         </body>
-      </html>
-   );
+  return (
+    <html lang="en" className={`${work_sans.variable} ${lalezar.variable}`}>
+      <body>
+        <Providers>
+          <MainNavbar />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
+    </html>
+  );
 }
