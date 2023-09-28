@@ -82,8 +82,7 @@ export default function Home() {
 
               <div className=" flex flex-col items-center  mx-auto py-[75px]  md:py-[225px]">
                 <p className="text-[1.5rem] md:text-[2rem]  font-light mb-2 md:mb-8">
-                  {" "}
-                  UNIVERSITAS MATARAM{" "}
+                  UNIVERSITAS MATARAM
                 </p>
                 <h1
                   className="text-center text-[4.5rem]  md:text-[8rem]  leading-[70px]  md:leading-[96px] mb-0 md:mb-3"
