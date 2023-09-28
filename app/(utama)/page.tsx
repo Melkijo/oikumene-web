@@ -92,8 +92,7 @@ export default function Home() {
                 </h1>
                 <p className="text-2xl font-light text-center w-full lg:w-[800px]">
                   Hendaklah kita semua saling menolong untuk meringankan beban
-                  saudara-saudari seiman yang mengalami kelemahan atau
-                  kesusahan.
+                  saudara-saudari seiman yang mengalami kelemahan atau kesusahan
                 </p>
               </div>
             </div>
