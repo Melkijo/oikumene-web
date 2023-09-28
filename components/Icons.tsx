@@ -2,103 +2,190 @@ import heroDown from "@/assets/heroDownIcon.png";
 import Image from "next/image";
 
 export function Star(props: { color: string; className?: string }) {
-   return (
-      <svg
-         className={props.className}
-         width="66"
-         height="65"
-         viewBox="0 0 66 65"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-      >
-         <path
-            d="M32.7168 32.7168H1L24.7876 24.7876L32.7168 1V32.7168Z"
-            fill={props.color}
-            stroke={props.color}
-            stroke-width="0.566372"
-         />
-         <path
-            d="M33.2832 32.7168H65L41.2124 24.7876L33.2832 1V32.7168Z"
-            fill={props.color}
-            stroke={props.color}
-            stroke-width="0.566372"
-         />
-         <path
-            d="M32.7168 32.7168H1L24.7876 40.646L32.7168 64.4336V32.7168Z"
-            fill={props.color}
-            stroke={props.color}
-            stroke-width="0.566372"
-         />
-         <path
-            d="M33.2832 32.7168H65L41.2124 40.646L33.2832 64.4336V32.7168Z"
-            fill={props.color}
-            stroke={props.color}
-            stroke-width="0.566372"
-         />
-      </svg>
-   );
+  return (
+    <svg
+      className={props.className}
+      width="66"
+      height="65"
+      viewBox="0 0 66 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32.7168 32.7168H1L24.7876 24.7876L32.7168 1V32.7168Z"
+        fill={props.color}
+        stroke={props.color}
+        stroke-width="0.566372"
+      />
+      <path
+        d="M33.2832 32.7168H65L41.2124 24.7876L33.2832 1V32.7168Z"
+        fill={props.color}
+        stroke={props.color}
+        stroke-width="0.566372"
+      />
+      <path
+        d="M32.7168 32.7168H1L24.7876 40.646L32.7168 64.4336V32.7168Z"
+        fill={props.color}
+        stroke={props.color}
+        stroke-width="0.566372"
+      />
+      <path
+        d="M33.2832 32.7168H65L41.2124 40.646L33.2832 64.4336V32.7168Z"
+        fill={props.color}
+        stroke={props.color}
+        stroke-width="0.566372"
+      />
+    </svg>
+  );
 }
 
 export function Sun(props: { color: string; className?: string }) {
-   return (
-      <svg
-         className={props.className}
-         xmlns="http://www.w3.org/2000/svg"
-         width="49"
-         height="49"
-         viewBox="0 0 49 49"
-         fill="none"
-      >
-         <rect x="22" width="5" height="27" fill={props.color} />
-         <rect x="22" y="22" width="5" height="27" fill={props.color} />
-         <rect
-            x="21"
-            y="24.5352"
-            width="5"
-            height="27"
-            transform="rotate(-45 21 24.5352)"
-            fill={props.color}
-         />
-         <rect
-            width="5"
-            height="27"
-            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 27.6274 24.5352)"
-            fill={props.color}
-         />
-         <rect
-            x="28.6274"
-            y="25.0918"
-            width="5"
-            height="27"
-            transform="rotate(135 28.6274 25.0918)"
-            fill={props.color}
-         />
-         <rect
-            width="5"
-            height="27"
-            transform="matrix(0.707107 0.707107 0.707107 -0.707107 21 25.0918)"
-            fill={props.color}
-         />
-         <rect
-            x="27"
-            y="22"
-            width="5"
-            height="27"
-            transform="rotate(90 27 22)"
-            fill={props.color}
-         />
-         <rect
-            x="49"
-            y="22"
-            width="5"
-            height="27"
-            transform="rotate(90 49 22)"
-            fill={props.color}
-         />
-      </svg>
-   );
+  return (
+    <svg
+      className={props.className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="49"
+      height="49"
+      viewBox="0 0 49 49"
+      fill="none"
+    >
+      <rect x="22" width="5" height="27" fill={props.color} />
+      <rect x="22" y="22" width="5" height="27" fill={props.color} />
+      <rect
+        x="21"
+        y="24.5352"
+        width="5"
+        height="27"
+        transform="rotate(-45 21 24.5352)"
+        fill={props.color}
+      />
+      <rect
+        width="5"
+        height="27"
+        transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 27.6274 24.5352)"
+        fill={props.color}
+      />
+      <rect
+        x="28.6274"
+        y="25.0918"
+        width="5"
+        height="27"
+        transform="rotate(135 28.6274 25.0918)"
+        fill={props.color}
+      />
+      <rect
+        width="5"
+        height="27"
+        transform="matrix(0.707107 0.707107 0.707107 -0.707107 21 25.0918)"
+        fill={props.color}
+      />
+      <rect
+        x="27"
+        y="22"
+        width="5"
+        height="27"
+        transform="rotate(90 27 22)"
+        fill={props.color}
+      />
+      <rect
+        x="49"
+        y="22"
+        width="5"
+        height="27"
+        transform="rotate(90 49 22)"
+        fill={props.color}
+      />
+    </svg>
+  );
 }
 
 export function HeroDown(props: { className?: string }) {
-   return <Image src={heroDown} alt="" className={props.className} />;
+  return <Image src={heroDown} alt="" className={props.className} />;
+}
+
+export function ChatBubbleIcon(props: { className?: string }) {
+  return (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 302 302"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M61.8228 33.4494C87.9286 30.0601 114.546 28.3125 141.566 28.3125C168.584 28.3125 195.198 30.0597 221.302 33.4484C245.49 36.5885 262.719 56.8687 264.153 80.3439C260.053 78.9748 255.708 78.0665 251.164 77.6893C233.691 76.2391 216.022 75.5 198.187 75.5C180.352 75.5 162.684 76.2391 145.211 77.6893C115.536 80.1522 94.375 105.255 94.375 133.487V187.412C94.375 208.686 106.388 228.169 124.988 237.546L91.6108 270.923C88.9117 273.622 84.8525 274.43 81.3259 272.969C77.7994 271.508 75.5 268.067 75.5 264.25V213.546C70.9259 213.056 66.3667 212.516 61.823 211.926C36.5503 208.645 18.875 186.652 18.875 161.855V83.5204C18.875 58.7229 36.5503 36.7306 61.8228 33.4494Z"
+        fill="white"
+      />
+      <path
+        d="M198.187 94.375C180.874 94.375 163.726 95.0925 146.773 96.4996C127.403 98.1072 113.25 114.544 113.25 133.487V187.412C113.25 206.384 127.444 222.83 146.838 224.413C162.489 225.69 178.306 226.389 194.266 226.488L229.264 261.486C231.963 264.185 236.023 264.992 239.549 263.532C243.076 262.071 245.375 258.63 245.375 254.812V224.74C246.763 224.636 248.151 224.527 249.537 224.414C268.931 222.831 283.125 206.385 283.125 187.413V133.487C283.125 114.544 268.972 98.1073 249.602 96.4997C232.648 95.0925 215.5 94.375 198.187 94.375Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+export function HeartIcon(props: { className?: string }) {
+  return (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.645 20.9107L11.6384 20.9071L11.6158 20.8949C11.5965 20.8844 11.5689 20.8693 11.5336 20.8496C11.4629 20.8101 11.3612 20.7524 11.233 20.6769C10.9765 20.5261 10.6132 20.3039 10.1785 20.015C9.31074 19.4381 8.15122 18.5901 6.9886 17.5063C4.68781 15.3615 2.25 12.1751 2.25 8.25C2.25 5.32194 4.7136 3 7.6875 3C9.43638 3 11.0023 3.79909 12 5.0516C12.9977 3.79909 14.5636 3 16.3125 3C19.2864 3 21.75 5.32194 21.75 8.25C21.75 12.1751 19.3122 15.3615 17.0114 17.5063C15.8488 18.5901 14.6893 19.4381 13.8215 20.015C13.3868 20.3039 13.0235 20.5261 12.767 20.6769C12.6388 20.7524 12.5371 20.8101 12.4664 20.8496C12.4311 20.8693 12.4035 20.8844 12.3842 20.8949L12.3616 20.9071L12.355 20.9107L12.3523 20.9121C12.1323 21.0289 11.8677 21.0289 11.6477 20.9121L11.645 20.9107Z"
+        fill="#FFFFFF"
+      />
+    </svg>
+  );
+}
+
+export function SunIcon(props: { className?: string }) {
+  return (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V5.25C12.75 5.66421 12.4142 6 12 6C11.5858 6 11.25 5.66421 11.25 5.25V3C11.25 2.58579 11.5858 2.25 12 2.25Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M18.8943 6.16634C19.1872 5.87344 19.1872 5.39857 18.8943 5.10568C18.6014 4.81278 18.1266 4.81278 17.8337 5.10568L16.2427 6.69667C15.9498 6.98956 15.9498 7.46443 16.2427 7.75733C16.5356 8.05022 17.0105 8.05022 17.3034 7.75733L18.8943 6.16634Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H18.75C18.3358 12.75 18 12.4142 18 12C18 11.5858 18.3358 11.25 18.75 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M17.8336 18.8943C18.1265 19.1871 18.6013 19.1871 18.8942 18.8943C19.1871 18.6014 19.1871 18.1265 18.8942 17.8336L17.3032 16.2426C17.0103 15.9497 16.5355 15.9497 16.2426 16.2426C15.9497 16.5355 15.9497 17.0104 16.2426 17.3033L17.8336 18.8943Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M12 18C12.4142 18 12.75 18.3358 12.75 18.75V21C12.75 21.4142 12.4142 21.75 12 21.75C11.5858 21.75 11.25 21.4142 11.25 21V18.75C11.25 18.3358 11.5858 18 12 18Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M7.7575 17.3033C8.0504 17.0104 8.0504 16.5355 7.7575 16.2426C7.46461 15.9497 6.98974 15.9497 6.69684 16.2426L5.10585 17.8336C4.81296 18.1265 4.81296 18.6014 5.10585 18.8943C5.39875 19.1872 5.87362 19.1872 6.16651 18.8943L7.7575 17.3033Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M6 12C6 12.4142 5.66421 12.75 5.25 12.75H3C2.58579 12.75 2.25 12.4142 2.25 12C2.25 11.5858 2.58579 11.25 3 11.25H5.25C5.66421 11.25 6 11.5858 6 12Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M6.69673 7.75732C6.98962 8.05021 7.4645 8.05021 7.75739 7.75732C8.05028 7.46443 8.05028 6.98955 7.75739 6.69666L6.1664 5.10567C5.87351 4.81278 5.39863 4.81278 5.10574 5.10567C4.81285 5.39856 4.81285 5.87344 5.10574 6.16633L6.69673 7.75732Z"
+        fill="#FFFFFF"
+      />
+    </svg>
+  );
 }

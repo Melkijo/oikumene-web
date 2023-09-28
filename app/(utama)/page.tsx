@@ -12,6 +12,21 @@ import { PedomanCard, KegiatanCard, ImageCard } from "@/components/Card";
 import { useEffect, useState } from "react";
 import { Kegiatan } from "@/types";
 import { Spinner } from "@nextui-org/react";
+import Link from "next/link";
+import rame2 from "@/assets/rame2.jpg";
+import rame3 from "@/assets/rame3.jpg";
+import rame4 from "@/assets/rame4.jpg";
+import rame5 from "@/assets/rame5.jpg";
+import { SunIcon, HeartIcon, ChatBubbleIcon } from "@/components/Icons";
+import dokumentasi1 from "@/assets/dokumentasi1.jpg";
+import dokumentasi2 from "@/assets/dokumentasi2.jpg";
+import dokumentasi3 from "@/assets/dokumentasi3.jpg";
+import dokumentasi4 from "@/assets/dokumentasi4.jpg";
+import dokumentasi5 from "@/assets/dokumentasi5.jpg";
+import dokumentasi6 from "@/assets/dokumentasi6.jpg";
+import dokumentasi7 from "@/assets/dokumentasi7.jpg";
+import dokumentasi8 from "@/assets/dokumentasi8.jpg";
+import dokumentasi9 from "@/assets/dokumentasi9.jpg";
 
 export default function Home() {
   const [kegiatan, setKegiatan] = useState<Kegiatan[]>([]);
@@ -117,6 +132,7 @@ export default function Home() {
                 />
                 <PedomanCard
                   color="#323643"
+                  icon={SunIcon}
                   title="Pengembangan Rohani"
                   desc="membantu anggotanya memperdalam iman mereka, melalui katekese, diskusi keagamaan, dan kegiatan rohani lainnya."
                 />
@@ -124,11 +140,13 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row gap-10  ">
                 <PedomanCard
                   color="#FA5656"
+                  icon={ChatBubbleIcon}
                   title="Pelayanan dan Kepedulian Sosial"
                   desc=" tidak hanya berfokus pada aspek spiritual, tetapi juga aktif dalam kegiatan pelayanan sosial dan amal. "
                 />
                 <PedomanCard
                   color="#0293E0"
+                  icon={HeartIcon}
                   title="Kebersamaan dan Persaudaraan"
                   desc="Ukm Oikumene mengedepankan nilai-nilai persaudaraan, kebersamaan, dan toleransi."
                 />
@@ -141,13 +159,18 @@ export default function Home() {
               <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-3">
                 tak kenal maka tak sayang~
               </h1>
-              <div className="text-center md:text-left w-full md:w-[650px] ">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Est nibh sit ac nulla
-                  vitae tellus. In in tortor porttitor vel amet faucibus
-                  imperdiet. Gravida a facilisi risus pharetra rhoncus volutpat
-                  jolteon....
+              <div className="text-center flex flex-col gap-3 md:text-left w-full md:w-[650px] ">
+                <p className="line-clamp-4 pt-3">
+                  Ukm Oikumene adalah sebuah organisasi keagamaan Kristen
+                  Katolik yang beroperasi di lingkungan Universitas Mataram.
+                  Organisasi ini didirikan dengan tujuan utama untuk menjadi
+                  sebuah wadah bagi mahasiswa dan mahasiswi Kristen Katolik di
+                  kampus tersebut, di mana mereka dapat bersatu dalam ibadah
+                  bersama dan memperkuat ikatan spiritual mereka.
                 </p>
+                <Link href="/tentang" className="font-semi-bold underline">
+                  Selengkapnya
+                </Link>
               </div>
             </div>
             <Marquee
@@ -156,6 +179,10 @@ export default function Home() {
               autoFill={true}
             >
               <ImageCard />
+              <ImageCard image={rame2} />
+              <ImageCard image={rame3} />
+              <ImageCard image={rame4} />
+              <ImageCard image={rame5} />
             </Marquee>
           </div>
 
@@ -167,6 +194,7 @@ export default function Home() {
               {kegiatan?.slice(0, 3).map((item, index) => (
                 <KegiatanCard
                   id={item.id}
+                  thumbnail={item.thumbnail}
                   title={item.title}
                   desc={item.desc}
                   key={index}
@@ -182,26 +210,28 @@ export default function Home() {
             <div className=" flex flex-col gap-5 mb-16">
               <Parallax translateX={[-20, 0]}>
                 <div className="flex justify-center">
-                  {[1, 2, 3, 4, 5].map((item, index) => (
-                    <ImageCard key={index} />
-                  ))}
+                  <ImageCard />
+                  <ImageCard image={dokumentasi4} />
+                  <ImageCard image={dokumentasi5} />
+                  <ImageCard image={dokumentasi6} />
+                  <ImageCard />
                 </div>
               </Parallax>
               <Parallax translateX={[20, 0]}>
                 <div className="flex justify-center">
                   <ImageCard />
-                  <ImageCard />
-                  <ImageCard />
-                  <ImageCard />
+                  <ImageCard image={dokumentasi1} />
+                  <ImageCard image={dokumentasi2} />
+                  <ImageCard image={dokumentasi3} />
                   <ImageCard />
                 </div>
               </Parallax>
               <Parallax translateX={[-20, 0]}>
                 <div className="flex justify-center">
                   <ImageCard />
-                  <ImageCard />
-                  <ImageCard />
-                  <ImageCard />
+                  <ImageCard image={dokumentasi7} />
+                  <ImageCard image={dokumentasi8} />
+                  <ImageCard image={dokumentasi9} />
                   <ImageCard />
                 </div>
               </Parallax>
@@ -209,16 +239,16 @@ export default function Home() {
           </div>
           <div className="px-[3%]">
             <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-[#0293E0] text-white rounded-2xl flex flex-col items-center">
-              <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5 text-center">
-                yuk join yuk
+              <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px]  text-center">
+                yuk join yuk!
               </h1>
               <p className="text-center">
-                Lorem ipsum dolor sit amet consectetur. Porta nulla purus nibh
-                non volutpat justo. Scelerisque sollicitudin eu vestibulum
-                maecenas elementum varius vel enim. Viverra eu gravida semper
-                fringilla natoque quis mi.
+                Yuk, bergabung dengan Ukm Oikumene sekarang dan jadilah bagian
+                dari komunitas yang peduli, beribadah bersama, serta tumbuh
+                dalam iman! Daftarkan dirimu sekarang dan mari bersama-sama
+                memperkuat ikatan spiritual kita di Universitas Mataram.
               </p>
-              <button className="mt-5 px-5 py-4 border border-white rounded-2xl">
+              <button className="mt-5 px-5 py-3 border border-white rounded-xl">
                 Daftar
               </button>
             </div>

@@ -4,7 +4,7 @@ import imageExample from "@/assets/example.jpg";
 import Link from "next/link";
 
 export function PedomanCard(props: {
-  icon?: string;
+  icon?: any;
   title?: string;
   desc?: string;
   color?: string;
@@ -15,11 +15,11 @@ export function PedomanCard(props: {
         style={{ backgroundColor: props.color ? props.color : "#F2F2F2" }}
         className=" lg:max-w-[300px] flex items-center justify-center h-full  w-full lg:w-fit py-7 px-10"
       >
-        <Image
-          src={props.icon ? props.icon : pedoman1}
-          className="min-w-[99px]"
-          alt=""
-        />
+        {props.icon ? (
+          <props.icon />
+        ) : (
+          <Image src={pedoman1} className="min-w-[99px]" alt="" />
+        )}
       </div>
       <div className="py-5 px-4 text-center md:text-left">
         <h1 className="text-[1.5rem]  leading-tight md:text-[2rem]">
