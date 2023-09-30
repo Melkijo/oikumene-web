@@ -153,7 +153,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className=" bg-blue-500 text-white py-10">
+          <div className=" bg-blue-500 text-white py-16 border-y-3 border-black">
             <div className="max-w-[1440px] mx-auto px-[3%] flex flex-col md:flex-row items-start  pb-5 justify-between">
               <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-3">
                 tak kenal maka tak sayang~
@@ -185,7 +185,7 @@ export default function Home() {
             </Marquee>
           </div>
 
-          <div className="max-w-[1440px] mx-auto px-[3%] mt-20">
+          <div className="max-w-[1440px] mx-auto px-[3%] py-20 ">
             <h1 className="text-center lg:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
               kegiatan kami
             </h1>
@@ -202,11 +202,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-fit mx-auto overflow-hidden mt-20 ">
+          <div className="max-w-fit mx-auto overflow-hidden py-16 ">
             <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5 text-center">
               dokumentasi asik
             </h1>
-            <div className=" flex flex-col gap-5 mb-16">
+            <div className=" flex flex-col gap-5">
               <Parallax translateX={[-20, 0]}>
                 <div className="flex justify-center">
                   <ImageCard />

@@ -34,7 +34,7 @@ export default function Index() {
     return (
       <>
         <div className="text-center my-6">
-          <h1 className="text-[2.5rem] font-bold leading-10">
+          <h1 className="text-[2.5rem] font-bold tracking-wider">
             Halaman Kegiatan
           </h1>
           <p>
