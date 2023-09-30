@@ -4,7 +4,7 @@ on progress...
 ### About ###
 UKM Oikumene is a religious UKM (Christian and Catholic) which aims to provide a forum for Catholic Christian students to gather
 ### Live Demo ###
-https://ukm-oikumene-universitas-mataram.vercel.app/
+https://ukm-oikumene.vercel.app/
 ### Tech Stack ###
 Typescript, React, NextJS 13, TailwindCSS, Supabase
 ### Features ###
