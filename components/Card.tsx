@@ -80,11 +80,11 @@ export function ImageCard(props: {
   const staticWidth = `${props.width ? props.width : 500}px`;
   const staticHeight = `${props.height ? props.height : 300}px`;
 
-  const combinedClassNames = `mx-3 object-cover neu-box rounded-3xl border-[3px] border-black w-[${staticWidth}] h-[${staticHeight}] md:w-[${dynamicWidth}] md:h-[${dynamicHeight}]`;
+  const combinedClassNames = `mx-3 object-fit neu-box rounded-3xl border-[3px] border-black w-[${staticWidth}] h-[${staticHeight}] md:w-[${dynamicWidth}] md:h-[${dynamicHeight}]`;
   return (
     <Image
       width={props.width ? props.width : 500}
-      height={props.height ? props.height : 300}
+      height={props.height ? props.height : 500}
       placeholder="blur"
       className={combinedClassNames}
       src={props.image ? props.image : imageExample}

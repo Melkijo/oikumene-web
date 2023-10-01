@@ -11,7 +11,7 @@ import Marquee from "react-fast-marquee";
 import { PedomanCard, KegiatanCard, ImageCard } from "@/components/Card";
 import { useEffect, useState } from "react";
 import { Kegiatan } from "@/types";
-import { Spinner } from "@nextui-org/react";
+import { Button, Spinner } from "@nextui-org/react";
 import Link from "next/link";
 import rame2 from "@/assets/rame2.jpg";
 import rame3 from "@/assets/rame3.jpg";
@@ -52,49 +52,51 @@ export default function Home() {
     return (
       <>
         <ParallaxProvider>
-          <div className="max-w-[1440px] mx-auto px-[3%]">
-            <div className="relative mb-10">
-              <Image
-                src={hero1}
-                alt=""
-                className="absolute bottom-0 w-[150px] md:w-[200px] hidden lg:block"
-              />
-              <Image
-                src={hero2}
-                alt=""
-                className="absolute top-[50px] w-[150px] md:w-[200px] hidden lg:block"
-              />
-              <Image
-                src={hero3}
-                alt=""
-                className="absolute right-[500px] top-[25px] hidden lg:block"
-              />
-              <Image
-                src={hero4}
-                alt=""
-                className="  absolute right-0 top-[50px] w-[150px] md:w-[200px] hidden lg:block"
-              />
-              <Image
-                src={hero5}
-                alt=""
-                className="absolute right-0 bottom-0 w-[150px] md:w-[200px] hidden lg:block"
-              />
+          <div className="w-full bg-hero bg-cover pb-10">
+            <div className="max-w-[1440px] mx-auto px-[3%] ">
+              <div className="relative ">
+                <Image
+                  src={hero1}
+                  alt=""
+                  className="absolute bottom-0 w-[150px] md:w-[200px] hidden lg:block"
+                />
+                <Image
+                  src={hero2}
+                  alt=""
+                  className="absolute top-[50px] w-[150px] md:w-[200px] hidden lg:block"
+                />
+                <Image
+                  src={hero3}
+                  alt=""
+                  className="absolute right-[500px] top-[25px] hidden lg:block"
+                />
+                <Image
+                  src={hero4}
+                  alt=""
+                  className="  absolute right-0 top-[50px] w-[150px] md:w-[200px] hidden lg:block"
+                />
+                <Image
+                  src={hero5}
+                  alt=""
+                  className="absolute right-0 bottom-0 w-[150px] md:w-[200px] hidden lg:block"
+                />
 
-              <div className=" flex flex-col items-center  mx-auto py-[75px]  md:py-[225px]">
-                <p className="text-[1.5rem] md:text-[2rem]  font-light mb-2 md:mb-8">
-                  UNIVERSITAS MATARAM
-                </p>
-                <h1
-                  className="text-center text-[4.5rem]  md:text-[8rem]  leading-[70px]  md:leading-[96px] mb-0 md:mb-3"
-                  data-scroll
-                >
-                  UKM OIKUMENE
-                </h1>
-                <p className="text-2xl font-light text-center w-full lg:w-[800px]">
-                  Hendaklah kita semua saling menolong untuk meringankan beban
-                  saudara-saudari seiman yang mengalami kelemahan atau
-                  kesusahan.
-                </p>
+                <div className=" flex flex-col items-center  mx-auto py-[75px]  md:py-[225px]">
+                  <p className="text-[1.5rem] md:text-[2rem]  font-light mb-2 md:mb-8">
+                    UNIVERSITAS MATARAM
+                  </p>
+                  <h1
+                    className="text-center text-[4.5rem]  md:text-[8rem]  leading-[70px]  md:leading-[96px] mb-0 md:mb-3"
+                    data-scroll
+                  >
+                    UKM OIKUMENE
+                  </h1>
+                  <p className="text-2xl font-light text-center w-full lg:w-[800px]">
+                    Hendaklah kita semua saling menolong untuk meringankan beban
+                    saudara-saudari seiman yang mengalami kelemahan atau
+                    kesusahan.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -185,11 +187,11 @@ export default function Home() {
             </Marquee>
           </div>
 
-          <div className="max-w-[1440px] mx-auto px-[3%] py-20 ">
-            <h1 className="text-center lg:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
+          <div className="max-w-[1440px] mx-auto px-[3%] pt-20 pb-10 ">
+            <h1 className="text-center  text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-5">
               kegiatan kami
             </h1>
-            <div className="flex justify-center items-center flex-col lg:flex-row gap-10 ">
+            <div className="flex justify-center items-center mb-8 flex-col lg:flex-row gap-10 ">
               {kegiatan?.slice(0, 3).map((item, index) => (
                 <KegiatanCard
                   id={item.id}
@@ -199,6 +201,13 @@ export default function Home() {
                   key={index}
                 />
               ))}
+            </div>
+            <div className="flex justify-center">
+              <Link href={`/kegiatan`}>
+                <Button color="primary" className="py-6 font-semibold">
+                  Lebih Lengkap
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -237,7 +246,7 @@ export default function Home() {
             </div>
           </div>
           <div className="px-[3%]">
-            <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-[#0293E0] text-white rounded-2xl flex flex-col items-center">
+            <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-blue-500 text-white rounded-2xl flex flex-col items-center">
               <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px]  text-center">
                 yuk join yuk!
               </h1>

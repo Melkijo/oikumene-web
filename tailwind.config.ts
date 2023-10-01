@@ -10,6 +10,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+        backgroundImage:{
+            'hero': "url('../assets/mesh.png')",
+            'default': "url('../assets/mesh-33.png')",
+
+        }
        
     }
   },
