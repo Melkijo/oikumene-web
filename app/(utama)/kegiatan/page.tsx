@@ -37,10 +37,7 @@ export default function Index() {
           <h1 className="text-[2.5rem] font-bold tracking-wider">
             Halaman Kegiatan
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            veritatis!
-          </p>
+          <p>Kegiatannya seru seru loo</p>
         </div>
         <div className="flex justify-center mx-6">
           <Input

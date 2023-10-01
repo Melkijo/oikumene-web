@@ -11,9 +11,9 @@ export default function Index() {
         <div className="flex justify-center">
           <div className="flex   px-6 flex-col  items-center max-w-[1440px]">
             <div className="flex flex-col-reverse lg:flex-row pt-5 items-center gap-6 lg:gap-14">
-              <div>
+              <div className="basis-1/2">
                 <h5 className="text-[1.5rem]">Apa itu UKM Oikumene?</h5>
-                <p className=" pb-10">
+                <p className="">
                   Ukm Oikumene adalah sebuah organisasi keagamaan Kristen
                   Katolik yang beroperasi di lingkungan Universitas Mataram.
                   Organisasi ini didirikan dengan tujuan utama untuk menjadi
@@ -28,16 +28,20 @@ export default function Index() {
                   rohani, solidaritas, dan persaudaraan di antara anggotanya.
                 </p>
               </div>
-
-              <ImageCard width={650} height={650} />
+              <div className="  w-full max-w-[675px] h-auto lg:h-[400px]  overflow-y-clip neu-box rounded-3xl border-[3px] border-black">
+                <Image
+                  src={tentangImg}
+                  alt=""
+                  className=" object-center object-cover w-full h-full"
+                />
+              </div>
             </div>
 
-            <div className="flex justify-between w-full flex-col lg:flex-row py-16 items-center gap-6 lg:gap-14">
-              <div className="w-[700px] h-[400px] overflow-y-clip neu-box rounded-3xl border-[3px] border-black">
+            <div className="flex  w-full flex-col lg:flex-row py-16 items-center gap-6 lg:gap-14">
+              <div className="w-full max-w-[675px] h-[400px] overflow-y-clip neu-box rounded-3xl border-[3px] border-black">
                 <Image
                   src={UKMlocation}
                   alt=""
-                  sizes="100%"
                   className=" object-cover w-full"
                 />
               </div>

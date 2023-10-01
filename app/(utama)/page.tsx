@@ -156,9 +156,9 @@ export default function Home() {
           </div>
 
           <div className=" bg-blue-500 text-white py-16 border-y-3 border-black">
-            <div className="max-w-[1440px] mx-auto px-[3%] flex flex-col md:flex-row items-start  pb-5 justify-between">
+            <div className="max-w-[1440px] mx-auto px-[3%] flex flex-col lg:flex-row items-start  pb-5 justify-between">
               <h1 className="text-center md:text-left text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px] mb-3">
-                tak kenal maka tak sayang~
+                tak kenal maka tak sayang ~
               </h1>
               <div className="text-center flex flex-col gap-3 md:text-left w-full md:w-[650px] ">
                 <p className="line-clamp-4 pt-3">
