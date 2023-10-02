@@ -42,6 +42,18 @@ export default function Home() {
     const data = await res.json();
     setKegiatan(data.data);
   }
+  function compareDates(a: any, b: any) {
+    const dateA = new Date(a.datetime);
+    const dateB = new Date(b.datetime);
+
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+    return 0;
+  }
   if (kegiatan == null || kegiatan.length == 0) {
     return (
       <div className="h-[80vh]   flex justify-center">
@@ -192,15 +204,19 @@ export default function Home() {
               kegiatan kami
             </h1>
             <div className="flex justify-center items-center mb-8 flex-col lg:flex-row gap-10 ">
-              {kegiatan?.slice(0, 3).map((item, index) => (
-                <KegiatanCard
-                  id={item.id}
-                  thumbnail={item.thumbnail}
-                  title={item.title}
-                  desc={item.desc}
-                  key={index}
-                />
-              ))}
+              {kegiatan
+                ?.sort(compareDates)
+                .reverse()
+                .slice(0, 3)
+                .map((item, index) => (
+                  <KegiatanCard
+                    id={item.id}
+                    thumbnail={item.thumbnail}
+                    title={item.title}
+                    desc={item.desc}
+                    key={index}
+                  />
+                ))}
             </div>
             <div className="flex justify-center">
               <Link href={`/kegiatan`}>
@@ -246,15 +262,13 @@ export default function Home() {
             </div>
           </div>
           <div className="px-[3%]">
-            <div className="max-w-[1440px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-blue-500 text-white rounded-2xl flex flex-col items-center">
+            <div className="max-w-[600px] my-10 py-5 mx-auto px-[3%] neu-box border-[3px] border-black bg-blue-500 text-white rounded-2xl flex flex-col items-center">
               <h1 className="text-[3rem] md:text-[4rem] leading-[50px] md:leading-[80px]  text-center">
                 yuk join yuk!
               </h1>
               <p className="text-center">
-                Yuk, bergabung dengan Ukm Oikumene sekarang dan jadilah bagian
-                dari komunitas yang peduli, beribadah bersama, serta tumbuh
-                dalam iman! Daftarkan dirimu sekarang dan mari bersama-sama
-                memperkuat ikatan spiritual kita di Universitas Mataram.
+                Daftarkan dirimu sekarang dan mari bersama-sama memperkuat
+                ikatan spiritual kita di Universitas Mataram.
               </p>
               <button className="mt-5 px-5 py-3 border border-white rounded-xl">
                 Daftar

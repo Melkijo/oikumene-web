@@ -1,9 +1,9 @@
 "use client";
 import { KegiatanCard } from "@/components/Card";
-import { Input, Spinner } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { Input, Pagination, Spinner } from "@nextui-org/react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Kegiatan } from "@/types";
-import { Pagination } from "@/components/Pagination";
+// import { Pagination } from "@/components/Pagination";
 export default function Index() {
   const [kegiatan, setKegiatan] = useState<Kegiatan[]>([]);
   const [search, setSearch] = useState<string>("");
@@ -24,6 +24,18 @@ export default function Index() {
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
 
+  function compareDates(a: any, b: any) {
+    const dateA = new Date(a.datetime);
+    const dateB = new Date(b.datetime);
+
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+    return 0;
+  }
   if (kegiatan == null || kegiatan.length == 0) {
     return (
       <div className="h-[80vh]   flex justify-center">
@@ -53,10 +65,12 @@ export default function Index() {
         <div className="max-w-[1440px] mx-auto px-[3%] mt-10 mb-10">
           <div className=" mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 ">
             {kegiatan
-              .slice(firstPostIndex, lastPostIndex)
               .filter((item) =>
                 item.title.toLowerCase().includes(search.toLowerCase())
               )
+              .sort(compareDates)
+              .reverse()
+              .slice(firstPostIndex, lastPostIndex)
               .map((item, index) => (
                 <KegiatanCard
                   id={item.id}
@@ -68,7 +82,7 @@ export default function Index() {
               ))}
           </div>
           <div className="flex justify-center mt-3">
-            <Pagination
+            {/* <Pagination
               totalPosts={
                 kegiatan.filter((item) =>
                   item.title.toLowerCase().includes(search.toLowerCase())
@@ -79,6 +93,16 @@ export default function Index() {
               postPerPage={postPerPage}
               setCurrentPage={setCurentPage}
               currentPage={currentPage}
+            /> */}
+            <Pagination
+              showControls
+              total={Math.ceil(
+                kegiatan.filter((item) =>
+                  item.title.toLowerCase().includes(search.toLowerCase())
+                ).length / postPerPage
+              )}
+              page={currentPage}
+              onChange={(page: SetStateAction<number>) => setCurentPage(page)}
             />
           </div>
         </div>

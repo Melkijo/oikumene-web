@@ -36,8 +36,8 @@ export default async function Page({ params }: { params: { id: string } }) {
             <Image
               src={kegiatan[0].thumbnail ? kegiatan[0].thumbnail : imageExample}
               alt="ini gambar"
-              width={200}
-              height={200}
+              width={800}
+              height={800}
               className="object-cover max-h-[600px] w-full  neu-box rounded-xl border-3 border-black"
             />
             <div className=" flex gap-3 flex-col">
